@@ -45,37 +45,10 @@ section {
   border: 0;
   text-decoration: none;
   text-transform: uppercase;
-  
-  .surface-primary &, .surface-secondary & {
-    background: white;
-    color: black;
-  }
-
-  .surface-accent & {
-    color: white;
-    background-color: black;
-  }
-
-  &:hover, &:focus {
-    background: inherit;
-    color: inherit;
-    outline: currentColor 2px solid;
-  }
+  // your code here
 }
 
 .text-subdued {
   font-size: 1rem;
-
-  .surface-primary & {
-    opacity: 0.8;
-  }
-
-  .surface-secondary & {
-    opacity: 0.7;
-  }
-
-  .surface-accent & {
-    opacity: 0.6;
-  }
   // your code here
 }

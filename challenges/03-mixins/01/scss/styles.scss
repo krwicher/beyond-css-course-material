@@ -9,3 +9,58 @@ body {
   text-align: center;
   padding: 10vh 0;
 }
+
+@mixin gradient($clr-1, $clr-2, $angle) {
+  background-image: linear-gradient($angle, $clr-1, $clr-2);
+}
+
+@mixin pseudo-underline($width: 50%, $height: 1px, $bg-clr: black, $margin: 1em) {
+  content: '';
+  display: block;
+
+  width: $width;
+  height: $height;
+  background-color: $bg-clr;
+  margin: $margin auto;
+}
+
+@mixin ui-element ($size, $color, $bg-color, $hover-color, $hover-bg-color) {
+  padding: $size $size * 3;
+  color: $color;
+  background-color: $bg-color;
+  @if($hover-color)
+  {
+    &:hover {
+      background-color: $hover-bg-color;
+      color: $hover-color;
+    }
+  }
+}
+
+.section-one {
+  @include gradient(red, blue, 90deg)
+}
+
+.section-two {
+  @include gradient(blue, green, 90deg)
+}
+
+.section-three {
+  @include gradient(green, red, 90deg)
+}
+
+.title::after {
+  @include pseudo-underline()
+}
+
+.button-one {
+  @include ui-element(1em, rgb(192, 93, 93), rgb(71, 125, 226), rgb(177, 0, 0), rgb(26, 58, 161))
+}
+
+.button-two {
+  @include ui-element(1em, rgb(192, 93, 93), rgb(71, 125, 226), rgb(177, 0, 0), rgb(26, 58, 161))
+}
+
+.badge-one {
+  @include ui-element(1em, rgb(192, 93, 93), rgb(71, 125, 226), )
+}

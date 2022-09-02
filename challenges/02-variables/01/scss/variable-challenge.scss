@@ -1,3 +1,8 @@
+$clr-white: #f8f7f7;
+$clr-black: #201e1f;
+$clr-red: #7e4e3e;
+$btn-radius: .5rem;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +17,9 @@ body {
   display: grid;
   height: 100vh;
   place-items: center;
+
+  background-color: $clr-white;
+  color: $clr-black;
 }
 
 .card {
@@ -19,12 +27,41 @@ body {
   gap: 0.75em;
   width: min(90%, 60rem);
   padding: 2em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  &__title {
+    color: $clr-red;
+  }
 }
 
 .btn {
   display: inline-block;
   padding: 0.5em 1.5em;
   text-decoration: none;
+  border-radius: $btn-radius;
+  border: $clr-red 2px solid;
+
+  &--primary {
+    color: $clr-white;
+    background-color: $clr-red;
+  }
+
+  &--outline {
+    color: $clr-red;
+    background-color: $clr-white;
+  }
+  &--primary:hover, &--outline:hover {
+    color: $clr-white;
+    box-shadow: $clr-red 0px 13px 27px -5px, $clr-red 0px 8px 16px -8px;
+  }
+
+  &--primary:hover {
+    background-color: $clr-black;
+  }
+
+  &--outline:hover {
+    background-color: $clr-black;
+  }
 }
 
 .flex-group {
